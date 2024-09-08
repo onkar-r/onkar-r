@@ -55,3 +55,11 @@ while (True):
 print("String slicing")
 mystr = "HelloWorld"
 print(f"Full string = {mystr}, Just Hello part = {mystr[:5]}, Reverse = {mystr[::-1]}") # Syntax: str[start pos: end pos : step]
+
+
+print("Lambda functions:")
+square = lambda x: x*x
+square(5) # 25
+
+
+
