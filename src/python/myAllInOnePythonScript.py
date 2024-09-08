@@ -62,4 +62,38 @@ square = lambda x: x*x
 square(5) # 25
 
 
+print ("Making static variable thread-safe using mutex lock")
+import threading
+
+class Counter:
+    count = 0  # Class variable (shared by all instances)
+    lock = threading.Lock()  # Lock for thread safety
+
+    @classmethod
+    def increment(cls):
+        with cls.lock:  # Acquire the lock before modifying the class variable
+            temp = cls.count
+            temp += 1
+            cls.count = temp
+
+# Function to increment the counter in a loop
+def increment_counter():
+    for _ in range(1000):
+        Counter.increment()
+
+# Create two threads
+thread1 = threading.Thread(target=increment_counter)
+thread2 = threading.Thread(target=increment_counter)
+
+# Start both threads
+thread1.start()
+thread2.start()
+
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+
+# Check the final value of the class variable
+print(Counter.count)
+
 
