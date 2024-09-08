@@ -20,7 +20,7 @@ a = None
 b = None
 op = None
 
-print("Welcome to Onkar's implementation of a Calculator -- a four function calculator in Python!")
+print("\n\nWelcome to Onkar's implementation of a Calculator -- a four function calculator in Python!")
 
 while (True):
     # get input values
@@ -52,17 +52,17 @@ while (True):
         print("Exiting... Bye!")
         break
 
-print("String slicing")
+print("\n\nString slicing")
 mystr = "HelloWorld"
 print(f"Full string = {mystr}, Just Hello part = {mystr[:5]}, Reverse = {mystr[::-1]}") # Syntax: str[start pos: end pos : step]
 
 
-print("Lambda functions:")
+print("\n\nLambda functions:")
 square = lambda x: x*x
-square(5) # 25
+print(f"Square of 5 using lambda function: {square(5)}") # 25
 
 
-print ("Making static variable thread-safe using mutex lock")
+print("\n\nMaking static variable thread-safe using mutex lock")
 import threading
 
 class Counter:
@@ -95,5 +95,4 @@ thread2.join()
 
 # Check the final value of the class variable
 print(Counter.count)
-
 
