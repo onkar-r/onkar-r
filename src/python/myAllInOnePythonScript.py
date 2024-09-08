@@ -2,9 +2,6 @@
 import sys
 
 
-# Onkar's implementation of a Calculator -- a four function calculator in Python
-
-
 def add(a, b):
     return a + b
 
@@ -18,11 +15,12 @@ def div(a, b):
     return a / b
 
 
-
 ##############  M A I N ########################
 a = None
 b = None
 op = None
+
+print("Welcome to Onkar's implementation of a Calculator -- a four function calculator in Python!")
 
 while (True):
     # get input values
@@ -53,3 +51,7 @@ while (True):
     if (q == "y" or q == "Y"):
         print("Exiting... Bye!")
         break
+
+print("String slicing")
+mystr = "HelloWorld"
+print(f"Full string = {mystr}, Just Hello part = {mystr[:5]}")
