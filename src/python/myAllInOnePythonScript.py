@@ -54,4 +54,4 @@ while (True):
 
 print("String slicing")
 mystr = "HelloWorld"
-print(f"Full string = {mystr}, Just Hello part = {mystr[:5]}")
+print(f"Full string = {mystr}, Just Hello part = {mystr[:5]}") # Syntax: str[start pos: end pos : step]
