@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, you've reached Onkar Rajopadhye's personal GitHub profile</h1>
+<h1 align="center">Hi 👋! Welcome to Onkar Rajopadhye's personal GitHub profile</h1>
 <h3 align="center">I'm a passionate backend developer from India</h3>
 
 - 💬 Ask me about **C/C++, Python, Database Kernel Design and Development, Distributed Systems, In-memory Databases, High Performance Computing**
