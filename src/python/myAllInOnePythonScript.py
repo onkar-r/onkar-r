@@ -96,3 +96,14 @@ thread2.join()
 # Check the final value of the class variable
 print(Counter.count)
 
+# A sample class with ctor, variables and a function
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def info(self):
+        print(f"My name is {self.name}. I am {self.age} years old.")
+
+p = Person("Onkar", 39)
+p.info()
