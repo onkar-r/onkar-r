@@ -1,6 +1,17 @@
+/**********************************************************
+ * Author: Onkar Rajopadhye
+ *
+ * How to run this program:
+ * [prompt]$ g++ -Wall -g stl_algos.cpp -o stl_algos
+ * [prompt]$ ./stl_algos
+ *
+**********************************************************/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
+
+using std::cout;
 
 
 // Sorts first elem of a pair in ascending and second element in descending order
@@ -20,6 +31,13 @@ int main() {
   std::cout << "\nContents after sorting:\n";
   for (auto i: v2) {
     std::cout << i.first << ", " << i.second << '\n';
+  }
+
+  // ================= next_permutation ==============================
+  std::string str("abc"); // already sorted
+  cout << "\nPrinting all permutations of a string:\n" << str << '\n';
+  while(std::next_permutation(str.begin(), str.end())) {
+    cout << str << '\n';
   }
 
   return 0;
