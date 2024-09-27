@@ -36,4 +36,24 @@ int main()
     std::regex long_word_regex("(\\w{7,})");
     std::string new_s = std::regex_replace(s, long_word_regex, "[$&]");
     std::cout << new_s << '\n';
+
+    std::cout << "\n\n";
+    std::string location("CSV/World Inequality_all_data/WID_data_A?.csv");
+    std::regex regexPtn("^(.*?)(\\[[^\\]]*\\].*|\\*.*\\$?|\\|.*|\\?.*)$", std::regex::basic);
+    std::smatch s_match;
+    if(std::regex_match(location, s_match, regexPtn)) {
+        std::cout << "Regex Matched!\n";
+        std::cout << "Prefix = " << s_match[1] << ", Pattern = " << s_match[2] << "\n";
+    } else {
+        std::cout << "Regex didn't match!\n";
+    }
+    
+    std::cout << "\n\n=== regex_search ===\n";
+    regexPtn = "WID_data_A?.csv";
+    std::string filename("WID_data_AD.csv");
+    if(std::regex_search(filename, regexPtn)) {
+        std::cout << ": Regex Matched!\n";
+    } else {
+        std::cout << "regex_search: Regex didn't match!\n";
+    }
 }
