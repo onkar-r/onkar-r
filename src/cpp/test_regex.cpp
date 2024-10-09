@@ -2,6 +2,19 @@
 #include <iterator>
 #include <regex>
 #include <string>
+
+
+void test_regex_search(const std::string& regexStr, const std::string& filename)
+{
+    std::regex regexPtn(regexStr);
+    std::cout << "\n\n=== regex_search with pattern: " << regexStr << ", filename: " << filename << " ===\n";
+    if(std::regex_search(filename, regexPtn)) {
+        std::cout << "Regex Matched!\n";
+    } else {
+        std::cout << "Regex didn't match!\n";
+    }
+    return;
+}
  
 int main()
 {
@@ -48,12 +61,16 @@ int main()
         std::cout << "Regex didn't match!\n";
     }
     
-    std::cout << "\n\n=== regex_search ===\n";
-    regexPtn = "WID_data_A?.csv";
+    std::string regexPtnStr("WID_data_A?.csv");
+    regexPtn = regexPtnStr;
     std::string filename("WID_data_AD.csv");
+    std::cout << "\n\n=== regex_search with pattern: " << regexPtnStr << ", filename: " << filename << " ===\n";
     if(std::regex_search(filename, regexPtn)) {
-        std::cout << ": Regex Matched!\n";
+        std::cout << "Regex Matched!\n";
     } else {
-        std::cout << "regex_search: Regex didn't match!\n";
+        std::cout << "Regex didn't match!\n";
     }
+
+    test_regex_search("^object", "object_match_all_files_begining_with_object.csv");
+    test_regex_search("json$", "match_all_files_ending_with_json.json");
 }
